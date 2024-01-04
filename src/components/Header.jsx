@@ -29,8 +29,7 @@ const MainHeader = () => {
     } else {
       openSidebar();
     }
-  }
-
+  };
 
   const getTokenPrice = async () => {
     try {
@@ -44,7 +43,7 @@ const MainHeader = () => {
           ].price
         );
       }
-    } catch (error) { }
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -67,7 +66,7 @@ const MainHeader = () => {
                 fontSize: "20px",
                 fontWeight: 600,
                 color: "rgb(255, 255, 255)",
-                marginLeft: "0.6em"
+                marginLeft: "0.6em",
               }}
             >
               Cyborg Dragon
@@ -75,84 +74,15 @@ const MainHeader = () => {
           </button>
           <div className="navbar-menu">
             <Link
-              className={`${router.pathname === "/"
-                ? "header-link-btn-selected"
-                : "header-link-btn"
-                } `}
+              className={`${
+                router.pathname === "/"
+                  ? "header-link-btn-selected"
+                  : "header-link-btn"
+              } `}
               href={"/"}
-            >
-              <span>Overview</span>
-            </Link>
-            <Link
-              className={`${router.pathname.includes("/swap")
-                ? "header-link-btn-selected"
-                : "header-link-btn"
-                } `}
-              href={"/swap"}
             >
               <span>Swap</span>
             </Link>
-            <Link
-              className={`${router.pathname.includes("/serum")
-                ? "header-link-btn-selected"
-                : "header-link-btn"
-                } `}
-              href={"/market/8BnEgHoWFysVcuFFX7QztDmzuH8r5ZFvyP3sYwn1XTh6"}
-            >
-              <span>Trade</span>
-            </Link>
-
-
-            <Link
-              className={`${router.pathname.includes("/analytics")
-                ? "header-link-btn-selected"
-                : "header-link-btn"
-                } `}
-              href={"/analytics"}
-            >
-              <div
-                className="dropbtn"
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: "10px"
-                }}
-              >
-                <span>Data</span>
-              </div>
-            </Link>
-            <Link
-              href={"/toolbox"}
-              className={`${router.pathname.includes("/toolbox")
-                ? "header-link-btn-selected"
-                : "header-link-btn"
-                } `}
-            >
-              <div className="tools-dropdown">
-                <div
-                  className="tools-dropbtn"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "10px"
-                  }}
-                >
-                  <span>Tools</span>
-                </div>
-              </div>
-            </Link>
-            <a
-
-              className="header-link-btn"
-              href="https://docs.compendex.xyz"
-              target="_blank"
-              rel="noopener noreferrer"
-             
-            >
-              <span>Docs</span>
-            </a>
           </div>
         </div>
         <div className="header-content-mobile">
@@ -175,10 +105,10 @@ const MainHeader = () => {
                 fontSize: "20px",
                 fontWeight: 600,
                 color: "rgb(255, 255, 255)",
-                marginLeft: "0.6em"
+                marginLeft: "0.6em",
               }}
             >
-             Cyborg Dragon
+              Cyborg Dragon
             </span>
           </button>
         </div>
@@ -186,28 +116,9 @@ const MainHeader = () => {
           style={{
             display: "flex",
             justifyContent: "space-evenly",
-            gap: "10px"
+            gap: "10px",
           }}
         >
-          <div
-            className="header_adr"
-            style={{
-              justifyContent: "space-evenly",
-              alignItems: "center",
-
-              minWidth: 110,
-              display: "flex"
-            }}
-          >
-            <div className="sol_place_holder">
-              <img src={"/assets/img/sol.png"} alt="" />
-              <span>SOL</span>
-            </div>
-          </div>
-          <div className="header_place_holder">
-            <img src={"/assets/img/cmfi_ticker.png"} alt="" />
-            <span>${tokenPrice && tokenPrice.toFixed(4)}</span>
-          </div>
           <button
             className="header__logo menu-icon"
             style={{ marginRight: "-10px" }}

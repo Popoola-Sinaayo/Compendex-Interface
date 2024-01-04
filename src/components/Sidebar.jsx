@@ -46,7 +46,7 @@ const Sidebar = () => {
           <img
             alt=""
             className="sidebar__pic sidebar__pic_light"
-            src={"/assets/img/compendex2.png"}
+            src={"/assets/img/logo.jpg"}
             style={{ height: 50, width: 50 }}
           />
           <img
@@ -74,21 +74,6 @@ const Sidebar = () => {
       </div>
       <div className="sidebar__body">
         <nav className="sidebar__nav">
-          <Tooltip placement="rightTop" title="Dashboard" color="dark">
-            <Link
-              className={`sidebar__item ${
-                router.pathname === "/" ? "active" : ""
-              }`}
-              href={linkTarget}
-            >
-              <div className="sidebar__icon">
-                <Icon path={mdiViewDashboard} size={1} color="#FFF" />
-              </div>
-
-              <div className="sidebar__text">Overview</div>
-            </Link>
-          </Tooltip>
-          <span className="side_bar_hint sidebar__item">TRADING TOOLS</span>
           <Tooltip placement="rightTop" title="Swap" color="dark">
             <Link
               href="/swap"
@@ -101,77 +86,6 @@ const Sidebar = () => {
               </div>
               <div className="sidebar__text">Swap</div>
             </Link>
-          </Tooltip>
-
-          <Tooltip placement="rightTop" title="Trade" color="dark">
-            <Link
-              className={`sidebar__item ${
-                router.pathname.includes("/serum") ? "active" : ""
-              }`}
-              href="/market/8BnEgHoWFysVcuFFX7QztDmzuH8r5ZFvyP3sYwn1XTh6"
-            >
-              <div className="sidebar__icon">
-                <CandlestickChart color="#FFF" style={{ fill: "#FFF" }} />
-              </div>
-              <div className="sidebar__text">Trade</div>
-            </Link>
-          </Tooltip>
-
-          {/* <span className="side_bar_hint sidebar__item">Nft / Metaverse</span> */}
-
-          <span className="side_bar_hint sidebar__item">DATA</span>
-          <Tooltip
-            placement="rightTop"
-            title="All Solana Protcols"
-            color="dark"
-          >
-            <Link
-              className={`sidebar__item ${
-                router.pathname === "/analytics" ? "active" : ""
-              }`}
-              href="/analytics"
-            >
-              <div className="sidebar__icon">
-                <DataObjectIcon color="#FFF" style={{ color: "#FFF" }} />
-              </div>
-
-              <div className="sidebar__text">Data</div>
-            </Link>
-          </Tooltip>
-
-          <span className="side_bar_hint sidebar__item">Tools</span>
-
-          <Tooltip
-            placement="rightTop"
-            title="Useful Platform"
-            color={"geekblue"}
-          >
-            <Link
-              href="/tools"
-              className={`sidebar__item ${
-                router.pathname === "/tools" ? "active" : ""
-              }`}
-            >
-              <div className="sidebar__icon">
-                <Icon path={mdiToolboxOutline} size={1} color="#FFF" />
-              </div>
-              <div className="sidebar__text">Tools</div>
-            </Link>
-          </Tooltip>
-          <Tooltip color="dark">
-            <a
-              className={`sidebar__item ${
-                router.pathname.includes("/nft") ? "active" : ""
-              }`}
-              href="https://sdocs.compendex.xyz"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="sidebar__icon ">
-                <HelpOutline color="#FFFF" style={{ color: "#FFF" }} />
-              </div>
-              <div className="sidebar__text">Docs</div>
-            </a>
           </Tooltip>
         </nav>
       </div>

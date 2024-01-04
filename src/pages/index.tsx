@@ -190,7 +190,7 @@ function TradePageInner() {
                       backgroundColor: "#1f2024",
                     }}
                   >
-                    <Col flex={"230px"}>
+                    <Col flex={"auto"}>
                       <div
                         className="price-title"
                         style={{
@@ -381,7 +381,7 @@ const RenderNormal = ({
           gap: "20px",
         }}
       >
-        <Col flex={"360px"}>
+        <Col flex={"auto"}>
           <div className=" data-card-container">
             <TabContext value={oderValue}>
               <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
@@ -405,32 +405,8 @@ const RenderNormal = ({
             </TabContext>
           </div>
         </Col>
+
         <Col flex={"auto"}>
-          <div className="data-card-container">
-            <TabContext value={chartValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
-                <TabList
-                  onChange={handleChartChange}
-                  className={classes.root}
-                  scrollButtons="auto"
-                  TabIndicatorProps={{ style: { minWidth: "auto" } }}
-                >
-                  <Tab label={`Market Pulse`} value="1" />
-                  <Tab label={`Solana TVL Tracker`} value="2" />
-                </TabList>
-              </Box>
-
-              <TabPanel value="1">
-                <MarketPulseChart />
-              </TabPanel>
-              <TabPanel value="2">
-                <AnalyticsChart />
-              </TabPanel>
-            </TabContext>
-          </div>
-        </Col>
-
-        <Col flex={"360px"}>
           <div className=" data-card-container">
             {" "}
             <TabContext value={trendingSwapView}>
@@ -700,7 +676,7 @@ const RenderMedium = ({
           gap: "20px",
         }}
       >
-        <Col flex={"360px"}>
+        <Col flex={"auto"}>
           <div className=" data-card-container">
             <TabContext value={oderValue}>
               <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
@@ -723,31 +699,6 @@ const RenderMedium = ({
             </TabContext>
           </div>
         </Col>
-        <Col flex={"auto"}>
-          <div className="data-card-container">
-            <TabContext value={chartValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
-                <TabList
-                  onChange={handleChartChange}
-                  className={classes.root}
-                  scrollButtons="auto"
-                  TabIndicatorProps={{ style: { minWidth: "auto" } }}
-                >
-                  <Tab label={`Market Pulse`} value="1" />
-                  <Tab label={`Solana TVL Tracker`} value="2" />
-                </TabList>
-              </Box>
-
-              <TabPanel value="1">
-                <MarketPulseChart />
-              </TabPanel>
-              <TabPanel value="2">
-                {" "}
-                <AnalyticsChart />
-              </TabPanel>
-            </TabContext>
-          </div>
-        </Col>
       </Row>
       <Row
         style={{
@@ -764,7 +715,7 @@ const RenderMedium = ({
           gap: "20px",
         }}
       >
-        <Col flex={"360px"}>
+        <Col flex={"auto"}>
           <div className=" data-card-container">
             {" "}
             <TabContext value={trendingSwapView}>
@@ -1032,35 +983,6 @@ const RenderSmall = ({ screenWidth }: { screenWidth: any }) => {
                 </TabPanel>
                 <TabPanel value="2"></TabPanel>
                 {/* <TabPanel value="3"></TabPanel> */}
-              </TabContext>
-            </div>
-          </Col>
-        </Row>
-        <Row
-          style={{ marginTop: "20px", marginLeft: "5px", marginRight: "5px" }}
-        >
-          <Col flex={"auto"}>
-            <div className="data-card-container">
-              <TabContext value={chartValue}>
-                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
-                  <TabList
-                    onChange={handleChartChange}
-                    className={classes.root}
-                    scrollButtons="auto"
-                    TabIndicatorProps={{ style: { minWidth: "auto" } }}
-                  >
-                    <Tab label={`Market Pulse`} value="1" />
-                    <Tab label={`Solana TVL Tracker`} value="2" />
-                  </TabList>
-                </Box>
-
-                <TabPanel value="1">
-                  <MarketPulseChart />
-                </TabPanel>
-                <TabPanel value="2">
-                  {" "}
-                  <AnalyticsChart />
-                </TabPanel>
               </TabContext>
             </div>
           </Col>
