@@ -10,7 +10,7 @@ import { useTokenList } from "@/context/tokenList";
 const useStyles = makeStyles({
   root: {
     "& .Mui-selected": {
-      backgroundColor: "#132235",
+      backgroundColor: "#000000",
       color: "#E2E8F0",
       fontFamily: "Poppins",
       fontStyle: "normal",
@@ -18,9 +18,9 @@ const useStyles = makeStyles({
       fontSize: "11px",
       lineHeight: "12px",
       textTransform: "capitalize",
-      border: "1px solid #132235",
+      border: "1px solid #000000",
       borderTopRadius: "5px",
-      borderBottom: "none"
+      borderBottom: "none",
     },
     "& .MuiTab-root": {
       color: "#E2E8F0",
@@ -33,37 +33,37 @@ const useStyles = makeStyles({
       maxHeight: "30px",
       borderBottom: "none",
       minHeight: "30px",
-      minWidth: "125px"
+      minWidth: "125px",
     },
     "& .MuiTabs-indicator": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
     "& .MuiTabs-flexContainer": {
-      borderBottom: "1px solid #132235",
-      width: "100%"
+      borderBottom: "1px solid #000000",
+      width: "100%",
     },
 
     " & .MuiTabPanel-root": {
-      width: "100%"
+      width: "100%",
     },
     "& .MuiBox-root-650": {
-      width: "100%"
+      width: "100%",
     },
     "& .MuiTabPanel-root-dreiQx": {
-      width: "100%"
+      width: "100%",
     },
     "& .MuiBox-root": {
-      backgroundColor: "green"
+      backgroundColor: "green",
     },
     "& .MuiTabPanel-root": {
-      backgroundColor: "red"
-    }
+      backgroundColor: "red",
+    },
   },
   panel: {
     "& .MuiTabPanel-root": {
-      backgroundColor: "red"
-    }
-  }
+      backgroundColor: "red",
+    },
+  },
 });
 const TokenSmallCard = (props: {
   mint: string;
@@ -78,7 +78,7 @@ const TokenSmallCard = (props: {
     "watchList",
     {
       defaultValue: null,
-      storageSync: true
+      storageSync: true,
     }
   );
   const [value, setValue] = React.useState("1");
@@ -96,7 +96,7 @@ const TokenSmallCard = (props: {
   };
   const displayName = (elm) => {
     let token = splTokenList.find((tkn) => tkn.symbol === elm);
-    console.log("TOken", token)
+    console.log("TOken", token);
 
     if (token) {
       return elm;
@@ -149,7 +149,7 @@ const TokenSmallCard = (props: {
         } else {
           parsedList[`${publicKey.toBase58()}`] = [
             ...watchList[`${publicKey.toBase58()}`],
-            token
+            token,
           ];
         }
 
@@ -245,7 +245,7 @@ const TokenSmallCard = (props: {
                   flexDirection: "column",
                   justifySelf: "flex-start",
                   position: "absolute",
-                  left: "45px"
+                  left: "45px",
                 }}
               >
                 <span>{token ? token.name : ""}</span>
@@ -303,7 +303,7 @@ const TokenSmallCard = (props: {
                     tokenInfo.coingecko &&
                     numeral(
                       tokenInfo.coingecko.market_data.circulating_supply *
-                      tokenInfo.coingecko.market_data.current_price.usd
+                        tokenInfo.coingecko.market_data.current_price.usd
                     ).format("0,0")}
                 </span>
               </div>
@@ -340,9 +340,9 @@ const TokenSmallCard = (props: {
                 <span>
                   {tokenInfo
                     ? (
-                      tokenHolders(tokenInfo.tokenHolders) /
-                      tokenInfo.coingecko.market_data.total_supply
-                    ).toFixed(2)
+                        tokenHolders(tokenInfo.tokenHolders) /
+                        tokenInfo.coingecko.market_data.total_supply
+                      ).toFixed(2)
                     : 0}
                   %
                 </span>
@@ -352,9 +352,9 @@ const TokenSmallCard = (props: {
                 <span>
                   {tokenInfo
                     ? (
-                      tokenHolders(tokenInfo.tokenHolders) /
-                      tokenInfo.coingecko.market_data.total_supply
-                    ).toFixed(2)
+                        tokenHolders(tokenInfo.tokenHolders) /
+                        tokenInfo.coingecko.market_data.total_supply
+                      ).toFixed(2)
                     : 0}
                   %
                 </span>
@@ -377,7 +377,7 @@ const TokenSmallCard = (props: {
                     flexDirection: "column",
                     width: "100%",
                     marginTop: "15px",
-                    gap: "15px"
+                    gap: "15px",
                   }}
                 >
                   {tokenInfo &&

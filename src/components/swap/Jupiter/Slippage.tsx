@@ -26,22 +26,27 @@ export const Slippage = ({
   };
 
   return (
-
     <>
-
       <Popover width={350} position="bottom" withArrow shadow="md">
         <Popover.Target>
           <Settings
-            style={{ color: "#7791E0", width: "20px", height: "20px", border: '1px solid #132235 !important' }}
+            style={{
+              color: "#7791E0",
+              width: "20px",
+              height: "20px",
+              border: "1px solid #000000 !important",
+            }}
           />
         </Popover.Target>
-        <Popover.Dropdown style={{
-          backgroundColor: "rgb(3, 10, 19)",
-          borderStyle: "solid",
-          borderWidth: "2px",
-          borderColor: "rgb(19, 34, 53)",
-          borderRadius: "10px",
-        }}>
+        <Popover.Dropdown
+          style={{
+            backgroundColor: "rgb(3, 10, 19)",
+            borderStyle: "solid",
+            borderWidth: "2px",
+            borderColor: "rgb(19, 34, 53)",
+            borderRadius: "10px",
+          }}
+        >
           <>
             {" "}
             <div>
@@ -49,7 +54,12 @@ export const Slippage = ({
               <div className={classes.slippageContainer}>
                 {OPTIONS.map((e) => {
                   return (
-                    <Button className={classes.btnContainer} onClick={() => setInput(e)}>{e / 10}%</Button>
+                    <Button
+                      className={classes.btnContainer}
+                      onClick={() => setInput(e)}
+                    >
+                      {e / 10}%
+                    </Button>
                   );
                 })}
               </div>
@@ -65,8 +75,8 @@ export const Slippage = ({
                     maxWidth: "100%",
                     width: "100% !important",
 
-                    background: "rgba(19, 34, 53, 0.5)",
-                    border: "1px solid #132235",
+                    background: "#000000",
+                    border: "1px solid #000000",
 
                     // display: flex;
                     // align-items: center;
@@ -102,7 +112,9 @@ export const Slippage = ({
                 </div>
               )}
             </div>
-            <Button onClick={handleSave} color="teal" mt={10}>Save settings</Button>
+            <Button onClick={handleSave} color="teal" mt={10}>
+              Save settings
+            </Button>
           </>
         </Popover.Dropdown>
       </Popover>

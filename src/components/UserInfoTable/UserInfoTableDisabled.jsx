@@ -17,13 +17,13 @@ function FloatingElement({
   style = {},
   children,
   stretchVertical = false,
-  className = ""
+  className = "",
 }) {
   return (
     <Wrapper
       style={{
         height: stretchVertical ? "calc(100% - 10px)" : undefined,
-        ...style
+        ...style,
       }}
       className={className}
     >
@@ -37,7 +37,7 @@ const useStyles = makeStyles({
     padding: 0,
     minHeight: 0,
     "& .Mui-selected": {
-      backgroundColor: "#132235",
+      backgroundColor: "#000000",
       color: "#E2E8F0",
       fontFamily: "Poppins",
       fontStyle: "normal",
@@ -45,9 +45,9 @@ const useStyles = makeStyles({
       fontSize: "11px",
       lineHeight: "12px",
       textTransform: "capitalize",
-      border: "1px solid #132235",
+      border: "1px solid #000000",
       borderTopRadius: "5px",
-      borderBottom: "none"
+      borderBottom: "none",
     },
     "& .MuiTab-root": {
       color: "#E2E8F0",
@@ -60,18 +60,18 @@ const useStyles = makeStyles({
       maxHeight: "30px",
       borderBottom: "none",
       minHeight: "30px",
-      minWidth: "125px"
+      minWidth: "125px",
     },
     "& .MuiTabs-indicator": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
     "& .MuiTabs-flexContainer": {
-      borderBottom: "1px solid #132235"
+      borderBottom: "1px solid #000000",
     },
     "& .iuIFQc": {
-      minHeight: "10px !important"
-    }
-  }
+      minHeight: "10px !important",
+    },
+  },
 });
 export default function UserInfoDisabled() {
   const [value, setValue] = useState("1");
@@ -91,15 +91,15 @@ export default function UserInfoDisabled() {
         scrollbarWidth: "none",
         scrollbarColor: "blue",
         borderRadius: "5px",
-        backgroundColor: "#080f19",
-        border: "1px solid #132235",
+        backgroundColor: "#1f2024",
+        border: "1px solid #000000",
         padding: "0px !important",
-        margin: "0px !important"
+        margin: "0px !important",
       }}
-    // className="info-table"
+      // className="info-table"
     >
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
           <TabList
             onChange={handleChange}
             className={classes.root}
@@ -107,7 +107,11 @@ export default function UserInfoDisabled() {
             TabIndicatorProps={{ style: { minWidth: "auto" } }}
           >
             <Tab label={`Open Orders`} value="1" className={classes.root} />
-            <Tab label={`Recent Trade History`} value="2" className={classes.root} />
+            <Tab
+              label={`Recent Trade History`}
+              value="2"
+              className={classes.root}
+            />
             <Tab label={`Balances`} value="3" className={classes.root} />
             {market && market.supportsSrmFeeDiscounts && (
               <Tab label={`Fee discounts`} value="4" className={classes.root} />
@@ -133,10 +137,7 @@ export default function UserInfoDisabled() {
             </div>
           </div>
         </TabPanel>
-
       </TabContext>
-
-
     </FloatingElement>
   );
 }

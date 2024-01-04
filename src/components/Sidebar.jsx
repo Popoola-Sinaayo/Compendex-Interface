@@ -1,18 +1,18 @@
 import {
   mdiSwapHorizontalVariant,
   mdiToolboxOutline,
-  mdiViewDashboard
+  mdiViewDashboard,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import CandlestickChart from "@mui/icons-material/CandlestickChart";
 import CloseIcon from "@mui/icons-material/Close";
 
-import { Tooltip } from '@mantine/core';
+import { Tooltip } from "@mantine/core";
 import { HelpOutline } from "@material-ui/icons";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
-import { useSideBar } from '../context/SideBar';
+import { useSideBar } from "../context/SideBar";
 import { useRouter } from "next/router";
 const Sidebar = () => {
   const { isOpen, openSidebar, closeSidebar } = useSideBar();
@@ -29,15 +29,18 @@ const Sidebar = () => {
     pathname: "/",
     key: uuidv4(), // we could use Math.random, but that's not guaranteed unique.
     state: {
-      applied: true
-    }
+      applied: true,
+    },
   };
   return (
-    <div className={`sidebar sidebar_color ${isOpen ? "active" : ""} `} style={{
-      backgroundColor: "#080f19!important",
-      borderColor: "#132235!important",
-      zIndex: 99999
-    }}>
+    <div
+      className={`sidebar sidebar_color ${isOpen ? "active" : ""} `}
+      style={{
+        backgroundColor: "#1f2024!important",
+        borderColor: "#000000!important",
+        zIndex: 99999,
+      }}
+    >
       <div className="sidebar__head">
         <Link className="sidebar__logo" href="/">
           <img
@@ -73,8 +76,9 @@ const Sidebar = () => {
         <nav className="sidebar__nav">
           <Tooltip placement="rightTop" title="Dashboard" color="dark">
             <Link
-              className={`sidebar__item ${router.pathname === "/" ? "active" : ""
-                }`}
+              className={`sidebar__item ${
+                router.pathname === "/" ? "active" : ""
+              }`}
               href={linkTarget}
             >
               <div className="sidebar__icon">
@@ -88,8 +92,9 @@ const Sidebar = () => {
           <Tooltip placement="rightTop" title="Swap" color="dark">
             <Link
               href="/swap"
-              className={`sidebar__item ${router.pathname === "/swap" ? "active" : ""
-                }`}
+              className={`sidebar__item ${
+                router.pathname === "/swap" ? "active" : ""
+              }`}
             >
               <div className="sidebar__icon">
                 <Icon path={mdiSwapHorizontalVariant} size={1} color="#FFF" />
@@ -100,8 +105,9 @@ const Sidebar = () => {
 
           <Tooltip placement="rightTop" title="Trade" color="dark">
             <Link
-              className={`sidebar__item ${router.pathname.includes("/serum") ? "active" : ""
-                }`}
+              className={`sidebar__item ${
+                router.pathname.includes("/serum") ? "active" : ""
+              }`}
               href="/market/8BnEgHoWFysVcuFFX7QztDmzuH8r5ZFvyP3sYwn1XTh6"
             >
               <div className="sidebar__icon">
@@ -113,7 +119,6 @@ const Sidebar = () => {
 
           {/* <span className="side_bar_hint sidebar__item">Nft / Metaverse</span> */}
 
-
           <span className="side_bar_hint sidebar__item">DATA</span>
           <Tooltip
             placement="rightTop"
@@ -121,8 +126,9 @@ const Sidebar = () => {
             color="dark"
           >
             <Link
-              className={`sidebar__item ${router.pathname === "/analytics" ? "active" : ""
-                }`}
+              className={`sidebar__item ${
+                router.pathname === "/analytics" ? "active" : ""
+              }`}
               href="/analytics"
             >
               <div className="sidebar__icon">
@@ -142,8 +148,9 @@ const Sidebar = () => {
           >
             <Link
               href="/tools"
-              className={`sidebar__item ${router.pathname === "/tools" ? "active" : ""
-                }`}
+              className={`sidebar__item ${
+                router.pathname === "/tools" ? "active" : ""
+              }`}
             >
               <div className="sidebar__icon">
                 <Icon path={mdiToolboxOutline} size={1} color="#FFF" />
@@ -153,8 +160,9 @@ const Sidebar = () => {
           </Tooltip>
           <Tooltip color="dark">
             <a
-              className={`sidebar__item ${router.pathname.includes("/nft") ? "active" : ""
-                }`}
+              className={`sidebar__item ${
+                router.pathname.includes("/nft") ? "active" : ""
+              }`}
               href="https://sdocs.compendex.xyz"
               target="_blank"
               rel="noopener noreferrer"
@@ -167,7 +175,7 @@ const Sidebar = () => {
           </Tooltip>
         </nav>
       </div>
-    </div >
+    </div>
   );
 };
 

@@ -59,7 +59,7 @@ const MainHeader = () => {
             className="header__logo"
             style={width > 910 ? {} : { marginRight: "0em", marginLeft: "1em" }}
           >
-            <img src={"/assets/img/compendex2.png"} alt="" />
+            <img src={"/assets/img/logo.jpg"} alt="" />
             <span
               id="compendex_name"
               style={{
@@ -70,7 +70,7 @@ const MainHeader = () => {
                 marginLeft: "0.6em"
               }}
             >
-              Compendex
+              Cyborg Dragon
             </span>
           </button>
           <div className="navbar-menu">
@@ -167,7 +167,7 @@ const MainHeader = () => {
             }}
             style={width > 910 ? {} : { marginRight: "0em", marginLeft: "1em" }}
           >
-            <img src={"assets/img/compendex2.png"} alt="" />
+            <img src={"assets/img/logo.jpg"} alt="" />
             <span
               id="compendex_name"
               style={{
@@ -178,7 +178,7 @@ const MainHeader = () => {
                 marginLeft: "0.6em"
               }}
             >
-              Compendex
+             Cyborg Dragon
             </span>
           </button>
         </div>

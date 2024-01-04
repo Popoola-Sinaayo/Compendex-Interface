@@ -66,16 +66,16 @@ export default function App({ Component, pageProps }: AppProps) {
           }}
           styles={{
             root: {
-              background: "#080f19 !important",
+              background: "#1f2024 !important",
             },
             header: {
-              background: "#080f19 !important",
+              background: "#1f2024 !important",
             },
             body: { padding: 20 },
 
             content: {
-              background: "#080f19 !important",
-              border: "1px solid #132235 !important",
+              background: "#1f2024 !important",
+              border: "1px solid #000000 !important",
               borderRadius: "5px !important",
               width: "calc(100%-20px)",
               gap: 10,
@@ -95,14 +95,14 @@ export default function App({ Component, pageProps }: AppProps) {
               marginBottom: 15,
               borderRadius: 10,
             }}
-          // styles={{
-          //   viewport: {
+            // styles={{
+            //   viewport: {
 
-          //   },
-          //   corner: {
-          //     backgroundColor: 'green'
-          //   }
-          // }}
+            //   },
+            //   corner: {
+            //     backgroundColor: 'green'
+            //   }
+            // }}
           >
             <Text fz="md" my={5}>
               This website-hosted user interface (this "Interface") is an open
@@ -158,7 +158,7 @@ export default function App({ Component, pageProps }: AppProps) {
             checked={checked}
             onChange={(event) => setChecked(event.currentTarget.checked)}
             label="I have read, understand, and accept these terms"
-            styles={{ input: { border: "solid 1px #132235 !important" } }}
+            styles={{ input: { border: "solid 1px #000000 !important" } }}
           />
           <Center>
             <Button

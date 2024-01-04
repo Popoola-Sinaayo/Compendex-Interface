@@ -45,7 +45,7 @@ const Wrapper = styled.div`
 const useStyles = makeStyles({
   root: {
     "& .Mui-selected": {
-      backgroundColor: "#132235",
+      backgroundColor: "#000000",
       color: "#E2E8F0",
       fontFamily: "Poppins",
       fontStyle: "normal",
@@ -53,7 +53,7 @@ const useStyles = makeStyles({
       fontSize: "11px",
       lineHeight: "12px",
       textTransform: "capitalize",
-      border: "1px solid #132235",
+      border: "1px solid #000000",
 
       borderTopRadius: "5px",
       borderBottom: "none",
@@ -76,7 +76,7 @@ const useStyles = makeStyles({
       backgroundColor: "transparent",
     },
     "& .MuiTabs-flexContainer": {
-      borderBottom: "1px solid #132235",
+      borderBottom: "1px solid #000000",
     },
     "& .iuIFQc": {
       minHeight: "10px !important",
@@ -89,7 +89,8 @@ export async function getStaticProps(context) {
       name: "DEX Trading Terminal | Compendex",
       description:
         "Introducing the next generation of trading technology: an open-source, professional-grade trading terminal for Solana. This platform aggregates protocols and analytics across Solana to help improve market efficiency and equalize opportunities for all.",
-      image: "https://res.cloudinary.com/doohfu9i4/image/upload/v1682543816/Compendex_-_Solana_Terminal_Overview_Image_tl8h2s.png"
+      image:
+        "https://res.cloudinary.com/doohfu9i4/image/upload/v1682543816/Compendex_-_Solana_Terminal_Overview_Image_tl8h2s.png",
     }, // will be passed to the page component as props
   };
 }
@@ -117,7 +118,7 @@ function TradePageInner() {
 
   useEffect(() => {
     initTickers();
-    const handleResize = () => { };
+    const handleResize = () => {};
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -186,14 +187,14 @@ function TradePageInner() {
                       minHeight: "60px",
                       padding: "5px",
                       marginLeft: width > 1400 ? "0px" : "30px",
-                      backgroundColor: "#080f19",
+                      backgroundColor: "#1f2024",
                     }}
                   >
                     <Col flex={"230px"}>
                       <div
                         className="price-title"
                         style={{
-                          backgroundColor: "rgba(19, 34, 53, 0.5)",
+                          backgroundColor: "#000000",
                           width: "100%",
                           minHeight: "40px",
                           borderStyle: "solid",
@@ -239,14 +240,14 @@ function TradePageInner() {
                       marginRight: "5px",
                       padding: "10px",
                       gap: "5px",
-                      backgroundColor: "#080f19",
+                      backgroundColor: "#1f2024",
                     }}
                   >
                     <Col flex={"auto"}>
                       <div
                         className="price-title"
                         style={{
-                          backgroundColor: "rgba(19, 34, 53, 0.5)",
+                          backgroundColor: "#000000",
                           width: "100%",
                           minHeight: "40px",
                           borderStyle: "solid",
@@ -383,7 +384,7 @@ const RenderNormal = ({
         <Col flex={"360px"}>
           <div className=" data-card-container">
             <TabContext value={oderValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleOrderChange}
                   className={classes.root}
@@ -407,7 +408,7 @@ const RenderNormal = ({
         <Col flex={"auto"}>
           <div className="data-card-container">
             <TabContext value={chartValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleChartChange}
                   className={classes.root}
@@ -433,7 +434,7 @@ const RenderNormal = ({
           <div className=" data-card-container">
             {" "}
             <TabContext value={trendingSwapView}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleTrendingChange}
                   aria-label="Token History Chart"
@@ -531,7 +532,7 @@ const RenderNormal = ({
           <div className=" data-card-container">
             <TabContext value={nftTab}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   onChange={handleNftChange}
@@ -570,7 +571,7 @@ const RenderNormal = ({
           <div className=" data-card-container">
             <TabContext value={statsTab}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   onChange={handleStatChange}
@@ -609,7 +610,7 @@ const RenderNormal = ({
           <div className="news-card-container">
             <TabContext value={newsTabs}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   onChange={handleNewsChange}
@@ -702,7 +703,7 @@ const RenderMedium = ({
         <Col flex={"360px"}>
           <div className=" data-card-container">
             <TabContext value={oderValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleOrderChange}
                   className={classes.root}
@@ -725,7 +726,7 @@ const RenderMedium = ({
         <Col flex={"auto"}>
           <div className="data-card-container">
             <TabContext value={chartValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleChartChange}
                   className={classes.root}
@@ -767,7 +768,7 @@ const RenderMedium = ({
           <div className=" data-card-container">
             {" "}
             <TabContext value={trendingSwapView}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleTrendingChange}
                   aria-label="Token History Chart"
@@ -843,7 +844,7 @@ const RenderMedium = ({
           <div className="data-card-container">
             <TabContext value={nftTab}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   onChange={handleNftChange}
@@ -882,7 +883,7 @@ const RenderMedium = ({
           <div className=" data-card-container">
             <TabContext value={statsTab}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   onChange={handleStatChange}
@@ -936,7 +937,7 @@ const RenderMedium = ({
           <div className="news-card-container">
             <TabContext value={newsTabs}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   onChange={handleNewsChange}
@@ -1013,7 +1014,7 @@ const RenderSmall = ({ screenWidth }: { screenWidth: any }) => {
           <Col flex={"auto"}>
             <div className="data-card-container">
               <TabContext value={oderValue}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     onChange={handleOrderChange}
                     className={classes.root}
@@ -1041,7 +1042,7 @@ const RenderSmall = ({ screenWidth }: { screenWidth: any }) => {
           <Col flex={"auto"}>
             <div className="data-card-container">
               <TabContext value={chartValue}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     onChange={handleChartChange}
                     className={classes.root}
@@ -1072,7 +1073,7 @@ const RenderSmall = ({ screenWidth }: { screenWidth: any }) => {
             <div className="data-card-container">
               {" "}
               <TabContext value={trendingSwapView}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     onChange={handleTrendingChange}
                     aria-label="Token History Chart"
@@ -1137,7 +1138,7 @@ const RenderSmall = ({ screenWidth }: { screenWidth: any }) => {
                 <Box
                   sx={{
                     borderBottom: 1,
-                    borderColor: "#132235",
+                    borderColor: "#000000",
                     height: "30px",
                   }}
                 >
@@ -1184,7 +1185,7 @@ const RenderSmall = ({ screenWidth }: { screenWidth: any }) => {
                 <Box
                   sx={{
                     borderBottom: 1,
-                    borderColor: "#132235",
+                    borderColor: "#000000",
                     height: "30px",
                   }}
                 >
@@ -1230,7 +1231,7 @@ const RenderSmall = ({ screenWidth }: { screenWidth: any }) => {
                 <Box
                   sx={{
                     borderBottom: 1,
-                    borderColor: "#132235",
+                    borderColor: "#000000",
                     height: "30px",
                   }}
                 >

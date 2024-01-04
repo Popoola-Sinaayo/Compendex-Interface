@@ -14,14 +14,14 @@ import {
   useSelectedBaseCurrencyBalances,
   useSelectedOpenOrdersAccount,
   useSelectedQuoteCurrencyAccount,
-  useSelectedQuoteCurrencyBalances
+  useSelectedQuoteCurrencyBalances,
 } from "../utils/markets";
 import { notify } from "../utils/notifications";
 import { getUnixTs, placeOrder } from "../utils/send";
 import {
   floorToDecimal,
   getDecimalCount,
-  roundToDecimal
+  roundToDecimal,
 } from "../utils/utils";
 //import { useWallet } from "../utils/wallet";
 import FloatingElement from "./layout/FloatingElement";
@@ -49,7 +49,7 @@ const BuyButton = styled(Button)`
 export default function TradeForm({
   style,
   setChangeOrderRef,
-  small
+  small,
 }: {
   style?: any;
   small: boolean;
@@ -119,7 +119,8 @@ export default function TradeForm({
         await market?.findBestFeeDiscountKey(sendConnection, publicKey);
         const endTime = getUnixTs();
         console.log(
-          `Finished refreshing accounts for ${market.address} after ${endTime - startTime
+          `Finished refreshing accounts for ${market.address} after ${
+            endTime - startTime
           }`
         );
       } catch (e) {
@@ -166,7 +167,7 @@ export default function TradeForm({
 
   const doChangeOrder = ({
     size,
-    price
+    price,
   }: {
     size?: number;
     price?: number;
@@ -230,14 +231,14 @@ export default function TradeForm({
       console.warn("Missing price");
       notify({
         message: "Missing price",
-        type: "error"
+        type: "error",
       });
       return;
     } else if (!baseSize) {
       console.warn("Missing size");
       notify({
         message: "Missing size",
-        type: "error"
+        type: "error",
       });
       return;
     }
@@ -258,7 +259,7 @@ export default function TradeForm({
         wallet: wallet.adapter as BaseSignerWalletAdapter,
         baseCurrencyAccount: baseCurrencyAccount?.pubkey,
         quoteCurrencyAccount: quoteCurrencyAccount?.pubkey,
-        feeDiscountPubkey: feeDiscountKey
+        feeDiscountPubkey: feeDiscountKey,
       });
       refreshCache(tuple("getTokenAccounts", wallet, connected));
       setPrice(undefined);
@@ -268,7 +269,7 @@ export default function TradeForm({
       notify({
         message: "Error placing order",
         description: e.message,
-        type: "error"
+        type: "error",
       });
     } finally {
       setSubmitting(false);
@@ -291,7 +292,7 @@ export default function TradeForm({
 
         height: "520px",
         marginBottom: small ? "0px" : "0px",
-        marginTop: small ? "0px" : "0px"
+        marginTop: small ? "0px" : "0px",
         // maxWidth: "360px",
         // marginBottom: "30px"
       }}
@@ -305,7 +306,7 @@ export default function TradeForm({
             alignItems: "center",
             marginTop: "15px",
             marginBottom: "15px",
-            gap: "10px"
+            gap: "10px",
           }}
         >
           <Button
@@ -317,14 +318,14 @@ export default function TradeForm({
               // width: "140px",
               // height: "24px",
               // borderRadius: "5px",
-              border: "1px solid rgba(50, 205, 153, 1) !important"
+              border: "1px solid rgba(50, 205, 153, 1) !important",
             }}
             className={`active-sell ${side === "buy" ? "active-sell-buy" : ""}`}
           >
             <span
               style={{
                 textAlign: "center",
-                fontWeight: "bold"
+                fontWeight: "bold",
               }}
             >
               Buy {baseCurrency}
@@ -336,17 +337,18 @@ export default function TradeForm({
             }}
             style={{
               width: "140px",
-              height: "24px"
+              height: "24px",
             }}
-            className={` active-sell  ${side === "sell" ? "active-sell-sell" : ""
-              } `}
+            className={` active-sell  ${
+              side === "sell" ? "active-sell-sell" : ""
+            } `}
           >
             {" "}
             <span
               style={{
                 textAlign: "center",
                 fontWeight: "bold",
-                color: "rgba(221, 80, 151, 1)"
+                color: "rgba(221, 80, 151, 1)",
               }}
             >
               Sell {baseCurrency}
@@ -360,13 +362,13 @@ export default function TradeForm({
               <div
                 style={{
                   textAlign: "left",
-                  backgroundColor: "rgba(19, 34, 53, 0.5)",
+                  backgroundColor: "#000000",
                   borderStyle: "solid",
                   borderWidth: "1px",
                   borderColor: "rgba(19, 34, 53, 1)",
                   borderRadius: "5px",
                   height: "56px",
-                  marginBottom: 15
+                  marginBottom: 15,
                 }}
               >
                 <span
@@ -379,7 +381,7 @@ export default function TradeForm({
                     fontSize: "12px",
                     color: "rgba(119,145,224,1)",
                     textAlign: "right",
-                    lineHeight: "1"
+                    lineHeight: "1",
                   }}
                 >
                   Price
@@ -397,7 +399,7 @@ export default function TradeForm({
                         fontSize: "14px",
                         textAlign: "right",
                         lineHeight: "1.25",
-                        color: "rgba(181, 181, 181, 1)"
+                        color: "rgba(181, 181, 181, 1)",
                       }}
                     >
                       {quoteCurrency}
@@ -412,13 +414,13 @@ export default function TradeForm({
               <div
                 style={{
                   textAlign: "left",
-                  backgroundColor: "rgba(19, 34, 53, 0.5)",
+                  backgroundColor: "#000000",
                   borderStyle: "solid",
                   borderWidth: "1px",
                   borderColor: "rgba(19, 34, 53, 1)",
                   borderRadius: "5px",
                   height: "56px",
-                  marginBottom: 15
+                  marginBottom: 15,
                 }}
               >
                 <span
@@ -432,7 +434,7 @@ export default function TradeForm({
                     fontSize: "12px",
                     color: "rgba(119,145,224,1)",
                     textAlign: "right",
-                    lineHeight: "1"
+                    lineHeight: "1",
                   }}
                 >
                   Amount
@@ -451,7 +453,7 @@ export default function TradeForm({
                         fontSize: "14px",
 
                         textAlign: "right",
-                        lineHeight: "1.25"
+                        lineHeight: "1.25",
                       }}
                     >
                       {baseCurrency}
@@ -465,13 +467,12 @@ export default function TradeForm({
               <div
                 style={{
                   textAlign: "left",
-                  backgroundColor: "rgba(19, 34, 53, 0.5)",
+                  backgroundColor: "#000000",
                   borderStyle: "solid",
                   borderWidth: "1px",
                   borderColor: "rgba(19, 34, 53, 1)",
                   borderRadius: "5px",
                   height: "56px",
-                 
                 }}
               >
                 <span
@@ -484,7 +485,7 @@ export default function TradeForm({
                     fontSize: "12px",
                     color: "rgba(119,145,224,1)",
                     textAlign: "right",
-                    lineHeight: "1"
+                    lineHeight: "1",
                   }}
                 >
                   Total
@@ -504,7 +505,7 @@ export default function TradeForm({
                         fontSize: "14px",
 
                         textAlign: "right",
-                        lineHeight: "1.25"
+                        lineHeight: "1.25",
                       }}
                     >
                       {quoteCurrency}
@@ -519,7 +520,7 @@ export default function TradeForm({
                 style={{
                   color: "rgb(119, 145, 224)",
                   fontSize: "12px",
-                  fontWeight: 400
+                  fontWeight: 400,
                 }}
               >
                 Set Trade Size (Available Balance)
@@ -535,7 +536,7 @@ export default function TradeForm({
                     top: "-2px",
                     height: "23px",
                     width: " 19px",
-                    background: "rgb(230, 230, 230) none repeat scroll 0% 0%"
+                    background: "rgb(230, 230, 230) none repeat scroll 0% 0%",
                   }}
                   onChange={onSliderChange}
                 />
@@ -546,20 +547,20 @@ export default function TradeForm({
                   justifyContent: "flex-start",
                   alignItems: "flex-start",
                   flexDirection: "column",
-                  backgroundColor: "rgba(19, 34, 53, 0.5)",
+                  backgroundColor: "#000000",
                   borderColor: "rgb(19, 34, 53)",
                   borderStyle: "solid",
                   borderWidth: "1px",
                   borderRadius: "5px",
                   padding: "5px",
-                  marginTop: "25px"
+                  marginTop: "25px",
                 }}
               >
                 <span
                   style={{
                     color: "rgb(119, 145, 224)",
                     fontWeight: 400,
-                    fontSize: "12px"
+                    fontSize: "12px",
                   }}
                 >
                   Advanced Trade Settings
@@ -569,13 +570,13 @@ export default function TradeForm({
                     checked={postOnly}
                     onChange={postOnChange}
                     inputProps={{ style: { backgroundColor: "#FFF" } }}
-                  // style={{ marginRight: 40 }}
+                    // style={{ marginRight: 40 }}
                   />
                   <span
                     style={{
                       fontSize: "12px",
                       fontWeight: 400,
-                      color: "rgb(226, 232, 240)"
+                      color: "rgb(226, 232, 240)",
                     }}
                   >
                     Post-Only Order (POST)
@@ -591,7 +592,7 @@ export default function TradeForm({
                     style={{
                       fontSize: "12px",
                       fontWeight: 400,
-                      color: "rgb(226, 232, 240)"
+                      color: "rgb(226, 232, 240)",
                     }}
                   >
                     Immediate-Or-Cancel (IOC)
@@ -601,8 +602,9 @@ export default function TradeForm({
             </div>
             {side === "buy" ? (
               <BuyButton
-                className={`${!price || !baseSize ? "disabled-trade-btn" : "buy-trade-btn"
-                  }`}
+                className={`${
+                  !price || !baseSize ? "disabled-trade-btn" : "buy-trade-btn"
+                }`}
                 disabled={!price || !baseSize}
                 onClick={onSubmit}
                 block
@@ -620,8 +622,9 @@ export default function TradeForm({
                 type="primary"
                 size="large"
                 loading={submitting}
-                className={`${!price || !baseSize ? "disabled-trade-btn" : "sell-trade-btn"
-                  }`}
+                className={`${
+                  !price || !baseSize ? "disabled-trade-btn" : "sell-trade-btn"
+                }`}
               >
                 Sell {baseCurrency}
               </SellButton>

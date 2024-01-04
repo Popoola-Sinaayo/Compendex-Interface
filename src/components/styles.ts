@@ -2,7 +2,7 @@ import { createStyles } from "@mantine/core";
 
 const useTvlStyles = createStyles((theme) => ({
   homeTvlItem: {
-    backgroundColor: "rgba(19, 34, 53, 0.5)",
+    backgroundColor: "#000000",
     alignSelf: "flex-start",
     minWidth: 320,
     height: "max-content",
@@ -138,7 +138,7 @@ const useCommonStyles = createStyles((theme) => ({
     marginTop: 7.5,
   },
   stableCoinItem: {
-    backgroundColor: "rgba(19, 34, 53, 0.5)",
+    backgroundColor: "#000000",
     alignSelf: "flex-start",
     minWidth: 320,
 
@@ -221,7 +221,7 @@ const useCommonStyles = createStyles((theme) => ({
 }));
 const useNftStyles = createStyles((theme) => ({
   homeNftItem: {
-    backgroundColor: `rgba(19, 34, 53, 0.5)`,
+    backgroundColor: `#000000`,
     alignSelf: "flex-start",
     minWidth: 320,
     height: "max-content",
@@ -351,7 +351,7 @@ const useSwapStyles = createStyles((theme) => ({
     width: "100%",
   },
   swapForm: {
-    backgroundColor: "#080f19",
+    backgroundColor: "#1f2024",
     borderStyle: "solid",
     borderWidth: "1px",
     borderColor: "rgba(51,66,87,.6)",
@@ -567,10 +567,10 @@ const useSwapStyles = createStyles((theme) => ({
   btnContainer: {
     width: "33.3333%",
     margin: "0 0.5rem",
-    background: "rgba(19, 34, 53, 0.5)",
+    background: "#000000",
     border: "1px solid #32cd99",
     bordeRadius: "5px",
-    color: "#32cd99"
+    color: "#32cd99",
   },
   switchIcon: {
     display: "flex",
@@ -654,7 +654,7 @@ const useSwapStyles = createStyles((theme) => ({
     flexDirection: "column",
     alignItems: "flex-start",
     marginTop: 5,
-    gap: 10
+    gap: 10,
   },
   slippageErrorInner: {
     display: "flex",
@@ -704,7 +704,7 @@ const useSwapStyles = createStyles((theme) => ({
     padding: theme.spacing.sm,
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: "rgba(19, 34, 53, 0.5)",
+      backgroundColor: "#000000",
       borderRadius: 10,
     },
   },
@@ -803,7 +803,7 @@ const useSwapStyles = createStyles((theme) => ({
 }));
 const useStableTokenStyles = createStyles((theme) => ({
   stableCoinItem: {
-    backgroundColor: "rgba(19, 34, 53, 0.5)",
+    backgroundColor: "#000000",
     alignSelf: "flex-start",
     minWidth: 320,
 
@@ -884,7 +884,7 @@ const useStableTokenStyles = createStyles((theme) => ({
     height: "max-content",
   },
   poolItem: {
-    backgroundColor: "rgba(19, 34, 53, 0.5)",
+    backgroundColor: "#000000",
     alignSelf: "flex-start",
     minWidth: 320,
     height: "max-content",
@@ -976,7 +976,7 @@ const useStableTokenStyles = createStyles((theme) => ({
 }));
 const useNewsStyles = createStyles((theme) => ({
   newsItem: {
-    backgroundColor: "rgba(19, 34, 53, 0.5)",
+    backgroundColor: "#000000",
     alignSelf: "flex-start",
     minWidth: 320,
     height: "max-content",
@@ -1062,7 +1062,7 @@ const useNewsStyles = createStyles((theme) => ({
     height: 35,
     width: 120,
     borderRadius: 5,
-    background: `rgba(19, 34, 53, 0.5)`,
+    background: `#000000`,
     border: `1px solid ${theme.colors.teal[6]}`,
     color: theme.colors.teal[6],
     alignSelf: "flex-end !important",
@@ -1200,7 +1200,7 @@ const usePopOverStyles = createStyles((theme) => ({
 }));
 const usePopStyles = createStyles((theme) => ({
   tokenPopHeader: {
-    backgroundColor: "rgba(19, 34, 53, 0.5)",
+    backgroundColor: "#000000",
     alignSelf: "center",
     minWidth: 300,
     minHeight: 80,

@@ -56,7 +56,7 @@ function Swap({ tokenList }) {
 const useStyles = makeStyles({
   root: {
     "& .Mui-selected": {
-      backgroundColor: "#132235",
+      backgroundColor: "#000000",
       color: "#E2E8F0",
       fontFamily: "Poppins",
       fontStyle: "normal",
@@ -64,7 +64,7 @@ const useStyles = makeStyles({
       fontSize: "11px",
       lineHeight: "12px",
       textTransform: "capitalize",
-      border: "1px solid #132235",
+      border: "1px solid #000000",
       borderTopRadius: "5px",
       borderBottom: "none",
     },
@@ -86,7 +86,7 @@ const useStyles = makeStyles({
       backgroundColor: "transparent",
     },
     "& .MuiTabs-flexContainer": {
-      borderBottom: "1px solid #132235",
+      borderBottom: "1px solid #000000",
     },
     "& .iuIFQc": {
       minHeight: "10px !important",
@@ -107,7 +107,7 @@ const AppInner = ({ tokenList }) => {
 
     const fromTokenData = useTokenInfoQuery(`tokenInfo-from`, fromMint);
     const toTokenData = useTokenInfoQuery(`tokenInfo-to`, toMint);
-    useMemo(() => { }, [fromTokenData, toTokenData]);
+    useMemo(() => {}, [fromTokenData, toTokenData]);
     const [value, setValue] = React.useState("1");
     const [swapValue, setSwapValue] = useState("1");
     const handleSwapChange = (event, newValue) => {
@@ -124,7 +124,6 @@ const AppInner = ({ tokenList }) => {
 
     return (
       <>
-
         <Row
           style={{
             justifyContent: "center",
@@ -142,7 +141,7 @@ const AppInner = ({ tokenList }) => {
           <Col flex={"360px"}>
             <div className=" data-card-container">
               <TabContext value={swapValue}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     className={classes.root}
                     scrollButtons="auto"
@@ -165,29 +164,31 @@ const AppInner = ({ tokenList }) => {
           <Col flex={"auto"}>
             <div className="swap-token-chart-card">
               <TabContext value={value}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     onChange={handleChange}
                     aria-label="Token History Chart"
                     className={classes.root}
                   >
                     <Tab
-                      label={`${!fromTokenData.isLoading &&
+                      label={`${
+                        !fromTokenData.isLoading &&
                         !fromTokenData.isError &&
                         fromTokenData.data.tokenInfo
-                        ? fromTokenData.data.tokenInfo.tokenInfo.name
-                        : ""
-                        } Price chart`}
+                          ? fromTokenData.data.tokenInfo.tokenInfo.name
+                          : ""
+                      } Price chart`}
                       value="1"
                     />
                     <Tab
-                      label={`${!toTokenData.isLoading &&
+                      label={`${
+                        !toTokenData.isLoading &&
                         !toTokenData.isError &&
                         toTokenData.data &&
                         toTokenData.data.tokenInfo
-                        ? toTokenData.data.tokenInfo.tokenInfo.name
-                        : ""
-                        } Price chart`}
+                          ? toTokenData.data.tokenInfo.tokenInfo.name
+                          : ""
+                      } Price chart`}
                       value="2"
                     />
                   </TabList>
@@ -280,14 +281,13 @@ const AppInner = ({ tokenList }) => {
         setSwapValue(newValue);
       }
     };
-    useMemo(() => { }, [fromTokenData, toTokenData]);
+    useMemo(() => {}, [fromTokenData, toTokenData]);
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
     const customClasses = useStyles({});
     return (
       <>
-
         <Row
           style={{
             justifyContent: "center",
@@ -306,7 +306,7 @@ const AppInner = ({ tokenList }) => {
           <Col flex={"360px"}>
             <div className=" data-card-container">
               <TabContext value={swapValue}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     className={classes.root}
                     scrollButtons="auto"
@@ -328,29 +328,31 @@ const AppInner = ({ tokenList }) => {
           <Col flex={"auto"}>
             <div className="swap-token-chart-card">
               <TabContext value={value}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     onChange={handleChange}
                     aria-label="Token History Chart"
                     className={classes.root}
                   >
                     <Tab
-                      label={`${!fromTokenData.isLoading &&
+                      label={`${
+                        !fromTokenData.isLoading &&
                         !fromTokenData.isError &&
                         fromTokenData.data.tokenInfo
-                        ? fromTokenData.data.tokenInfo.tokenInfo.name
-                        : ""
-                        } Price chart`}
+                          ? fromTokenData.data.tokenInfo.tokenInfo.name
+                          : ""
+                      } Price chart`}
                       value="1"
                     />
                     <Tab
-                      label={`${!toTokenData.isLoading &&
+                      label={`${
+                        !toTokenData.isLoading &&
                         !toTokenData.isError &&
                         toTokenData.data &&
                         toTokenData.data.tokenInfo
-                        ? toTokenData.data.tokenInfo.tokenInfo.name
-                        : ""
-                        } Price chart`}
+                          ? toTokenData.data.tokenInfo.tokenInfo.name
+                          : ""
+                      } Price chart`}
                       value="2"
                     />
                   </TabList>
@@ -459,7 +461,7 @@ const AppInner = ({ tokenList }) => {
         setSwapValue(newValue);
       }
     };
-    useMemo(() => { }, [fromTokenData, toTokenData]);
+    useMemo(() => {}, [fromTokenData, toTokenData]);
 
     const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -467,7 +469,6 @@ const AppInner = ({ tokenList }) => {
 
     return (
       <>
-
         <Row
           style={{
             minHeight: "400px",
@@ -485,7 +486,7 @@ const AppInner = ({ tokenList }) => {
               <Col flex={"auto"}>
                 <div className=" data-card-container">
                   <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                    <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                       <TabList
                         className={classes.root}
                         scrollButtons="auto"
@@ -515,29 +516,31 @@ const AppInner = ({ tokenList }) => {
               <Col flex={"auto"}>
                 <div className="swap-token-chart-card">
                   <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                    <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                       <TabList
                         onChange={handleChange}
                         aria-label="Token History Chart"
                         className={classes.root}
                       >
                         <Tab
-                          label={`${!fromTokenData.isLoading &&
+                          label={`${
+                            !fromTokenData.isLoading &&
                             !fromTokenData.isError &&
                             fromTokenData.data.tokenInfo
-                            ? fromTokenData.data.tokenInfo.tokenInfo.name
-                            : ""
-                            } Price chart`}
+                              ? fromTokenData.data.tokenInfo.tokenInfo.name
+                              : ""
+                          } Price chart`}
                           value="1"
                         />
                         <Tab
-                          label={`${!toTokenData.isLoading &&
+                          label={`${
+                            !toTokenData.isLoading &&
                             !toTokenData.isError &&
                             toTokenData.data &&
                             toTokenData.data.tokenInfo
-                            ? toTokenData.data.tokenInfo.tokenInfo.name
-                            : ""
-                            } Price chart`}
+                              ? toTokenData.data.tokenInfo.tokenInfo.name
+                              : ""
+                          } Price chart`}
                           value="2"
                         />
                       </TabList>
@@ -673,7 +676,7 @@ const AppInner = ({ tokenList }) => {
 
     useEffect(() => {
       initTickers();
-      return () => { };
+      return () => {};
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const { width } = useViewport();
@@ -694,14 +697,14 @@ const AppInner = ({ tokenList }) => {
             minHeight: "60px",
             padding: "5px",
             marginLeft: width > 1400 ? "0px" : "30px",
-            backgroundColor: "#080f19",
+            backgroundColor: "#1f2024",
           }}
         >
           <Col flex={"230px"}>
             <div
               className="price-title"
               style={{
-                backgroundColor: "rgba(19, 34, 53, 0.5)",
+                backgroundColor: "#000000",
                 width: "100%",
                 minHeight: "40px",
                 borderStyle: "solid",
@@ -747,14 +750,14 @@ const AppInner = ({ tokenList }) => {
             marginRight: "5px",
             padding: "10px",
             gap: "5px",
-            backgroundColor: "#080f19",
+            backgroundColor: "#1f2024",
           }}
         >
           <Col flex={"auto"}>
             <div
               className="price-title"
               style={{
-                backgroundColor: "rgba(19, 34, 53, 0.5)",
+                backgroundColor: "#000000",
                 width: "100%",
                 minHeight: "40px",
                 borderStyle: "solid",
@@ -827,12 +830,12 @@ const AppInner = ({ tokenList }) => {
 export async function getServerSideProps(context) {
   const { query } = context;
   const { tokens } = query;
-  let fromToken = 'USDC';
-  let toToken = 'CMFI';
+  let fromToken = "USDC";
+  let toToken = "CMFI";
   if (tokens) {
-    let items = tokens.split('-');
+    let items = tokens.split("-");
     fromToken = items[0];
-    toToken = items[1]
+    toToken = items[1];
   }
 
   const name: string = ` Smart Swap Aggregator ${fromToken} - ${toToken}  | Compendex`;

@@ -42,7 +42,7 @@ export default function PublicTrades({ smallScreen }) {
           display: "flex",
           justifyContent: "space-evenly",
           alignItems: "center",
-          backgroundColor: "rgba(19, 34, 53, 0.5)",
+          backgroundColor: "#000000",
           height: "30px",
           padding: "5px",
           margin: "0px",
@@ -131,9 +131,7 @@ export default function PublicTrades({ smallScreen }) {
         <div
           style={{
             overflowY: "scroll",
-            maxHeight: smallScreen
-              ? "calc(100% - 75px)"
-              : "480px",
+            maxHeight: smallScreen ? "calc(100% - 75px)" : "480px",
           }}
         >
           {trades.map((trade: BonfidaTrade, i: number) => (

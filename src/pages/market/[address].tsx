@@ -84,7 +84,7 @@ const useStyles = makeStyles({
       minHeight: "20px",
     },
     "& .Mui-selected": {
-      backgroundColor: "#132235",
+      backgroundColor: "#000000",
       color: "#E2E8F0",
       fontFamily: "Poppins",
       fontStyle: "normal",
@@ -92,7 +92,7 @@ const useStyles = makeStyles({
       fontSize: "11px",
       lineHeight: "12px",
       textTransform: "capitalize",
-      border: "1px solid #132235",
+      border: "1px solid #000000",
       borderTopRadius: "5px",
       borderBottom: "none",
     },
@@ -114,7 +114,7 @@ const useStyles = makeStyles({
       backgroundColor: "transparent",
     },
     "& .MuiTabs-flexContainer": {
-      borderBottom: "1px solid #132235",
+      borderBottom: "1px solid #000000",
     },
     "& .iuIFQc": {
       minHeight: "10px !important",
@@ -291,7 +291,7 @@ function TradePageInner() {
                       height: "60px",
                       padding: "5px",
                       marginLeft: width > 1400 ? "0px" : "30px",
-                      backgroundColor: "#080f19",
+                      backgroundColor: "#1f2024",
                     }}
                   >
                     <Col flex={"auto"}>
@@ -381,15 +381,15 @@ function TradePageInner() {
                               $
                               {selectedToken &&
                                 (selectedToken.marketData &&
-                                  isScientificNotation(
-                                    selectedToken.marketData.current_price.usd
-                                  )
+                                isScientificNotation(
+                                  selectedToken.marketData.current_price.usd
+                                )
                                   ? convert(
-                                    selectedToken.marketData.current_price.usd
-                                  )
+                                      selectedToken.marketData.current_price.usd
+                                    )
                                   : numeral(
-                                    selectedToken.marketData.current_price.usd
-                                  ).format("0,0.0000"))}
+                                      selectedToken.marketData.current_price.usd
+                                    ).format("0,0.0000"))}
                             </span>
                           </div>
                           <div
@@ -610,15 +610,15 @@ function MarketSelector({
               ? -1
               : extractQuote(a.name) !== "USDT" &&
                 extractQuote(b.name) === "USDT"
-                ? 1
-                : 0
+              ? 1
+              : 0
           )
           .sort((a: any, b: any) =>
             extractBase(a.name) < extractBase(b.name)
               ? -1
               : extractBase(a.name) > extractBase(b.name)
-                ? 1
-                : 0
+              ? 1
+              : 0
           )
           .map(({ address, name, deprecated }: any, i: number) => {
             return (
@@ -772,7 +772,7 @@ const RenderNormal = ({
         <Col flex={"390px"}>
           <div className="trade-card-container">
             <TabContext value={orderValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleOrderChange}
                   className={classes.root}
@@ -798,7 +798,7 @@ const RenderNormal = ({
         <Col flex={"auto"}>
           <div className="tv-card-container">
             <TabContext value={tvChartValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleTVChartChange}
                   className={classes.root}
@@ -839,7 +839,7 @@ const RenderNormal = ({
         <Col flex={"390px"}>
           <div className="trade-card-container">
             <TabContext value={chartValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   // onChange={handleChartChange}
                   className={classes.root}
@@ -874,7 +874,7 @@ const RenderNormal = ({
           <div className="orderbook-card-container">
             <TabContext value={chartValue}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   // onChange={handleChartChange}
@@ -900,7 +900,7 @@ const RenderNormal = ({
           <div className="orderbook-card-container">
             <TabContext value={chartValue}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   // onChange={handleChartChange}
@@ -1006,7 +1006,7 @@ const RenderMedium = ({
           {" "}
           <div className="trade-card-container">
             <TabContext value={chartValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleOrderChange}
                   className={classes.root}
@@ -1027,7 +1027,7 @@ const RenderMedium = ({
         <Col flex={"auto"}>
           <div className="tv-card-container">
             <TabContext value={chartValue}>
-              <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                 <TabList
                   onChange={handleTVChartChange}
                   className={classes.root}
@@ -1085,7 +1085,7 @@ const RenderMedium = ({
           <div className="trade-card-container">
             <TabContext value={chartValue}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   // onChange={handleChartChange}
@@ -1107,7 +1107,7 @@ const RenderMedium = ({
           <div className="trade-card-container">
             <TabContext value={chartValue}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   // onChange={handleChartChange}
@@ -1133,7 +1133,7 @@ const RenderMedium = ({
           <div className="trade-card-container">
             <TabContext value={chartValue}>
               <Box
-                sx={{ borderBottom: 1, borderColor: "#132235", height: "30px" }}
+                sx={{ borderBottom: 1, borderColor: "#000000", height: "30px" }}
               >
                 <TabList
                   // onChange={handleChartChange}
@@ -1245,7 +1245,7 @@ const RenderSmall = ({
           <Col flex={"auto"}>
             <div className="tv-card-container">
               <TabContext value={chartValue}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     onChange={handleTVChartChange}
                     className={classes.root}
@@ -1290,7 +1290,7 @@ const RenderSmall = ({
           <Col flex={"auto"}>
             <div className="trade-card-container">
               <TabContext value={chartValue}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     // onChange={handleChartChange}
                     className={classes.root}
@@ -1319,7 +1319,7 @@ const RenderSmall = ({
           <Col flex={"auto"}>
             <div className="trade-card-container">
               <TabContext value={chartValue}>
-                <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+                <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
                   <TabList
                     // onChange={handleChartChange}
                     className={classes.root}
@@ -1345,7 +1345,7 @@ const RenderSmall = ({
                 <Box
                   sx={{
                     borderBottom: 1,
-                    borderColor: "#132235",
+                    borderColor: "#000000",
                     height: "30px",
                   }}
                 >
@@ -1380,7 +1380,7 @@ const RenderSmall = ({
                 <Box
                   sx={{
                     borderBottom: 1,
-                    borderColor: "#132235",
+                    borderColor: "#000000",
                     height: "30px",
                   }}
                 >

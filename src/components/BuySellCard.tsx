@@ -7,7 +7,7 @@ import SellBuyItem from "./SellBuyItem";
 const useStyles = makeStyles({
   root: {
     "& .Mui-selected": {
-      backgroundColor: "#132235",
+      backgroundColor: "#000000",
       color: "#E2E8F0 !important",
       fontFamily: "Poppins",
       fontStyle: "normal",
@@ -15,9 +15,9 @@ const useStyles = makeStyles({
       fontSize: "11px",
       lineHeight: "12px",
       textTransform: "capitalize",
-      border: "1px solid #132235",
+      border: "1px solid #000000",
       borderTopRadius: "5px",
-      borderBottom: "none"
+      borderBottom: "none",
     },
     "& .MuiTab-root": {
       color: "#E2E8F0 !important",
@@ -31,18 +31,18 @@ const useStyles = makeStyles({
       maxHeight: "30px",
       borderBottom: "none",
       minHeight: "30px",
-      minWidth: "125px"
+      minWidth: "125px",
     },
     "& .MuiTabs-indicator": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
     "& .MuiTabs-flexContainer": {
-      borderBottom: "1px solid #132235"
+      borderBottom: "1px solid #000000",
     },
     "& .cYQnJc": {
-      backgroundColor: "red"
-    }
-  }
+      backgroundColor: "red",
+    },
+  },
 });
 const BuySellCard = () => {
   //@ts-ignore
@@ -58,7 +58,7 @@ const BuySellCard = () => {
     <div className=" data-card-container">
       {" "}
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: "#132235" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "#000000" }}>
           <TabList
             onChange={handleChange}
             aria-label="Token History Chart"

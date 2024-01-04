@@ -178,7 +178,7 @@ export default function Orderbook({ smallScreen, depth = 7, onPrice, onSize }) {
           justifyContent: "space-evenly",
           alignItems: "center",
           border: "1px solid rgb(19, 34, 53)",
-          backgroundColor: "rgba(19, 34, 53, 0.5)",
+          backgroundColor: "#000000",
           height: "30px",
         }}
         className="remove-padding"

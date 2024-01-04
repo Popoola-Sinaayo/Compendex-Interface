@@ -19,7 +19,7 @@ import { useTokenList } from "@/context/tokenList";
 const useStyles = makeStyles({
   root: {
     "& .Mui-selected": {
-      backgroundColor: "#132235",
+      backgroundColor: "#000000",
       color: "#E2E8F0",
       fontFamily: "Poppins",
       fontStyle: "normal",
@@ -27,9 +27,9 @@ const useStyles = makeStyles({
       fontSize: "11px",
       lineHeight: "12px",
       textTransform: "capitalize",
-      border: "1px solid #132235",
+      border: "1px solid #000000",
       borderTopRadius: "5px",
-      borderBottom: "none"
+      borderBottom: "none",
     },
     "& .MuiTab-root": {
       color: "#E2E8F0",
@@ -43,37 +43,37 @@ const useStyles = makeStyles({
       maxHeight: "30px",
       borderBottom: "none",
       minHeight: "30px",
-      minWidth: "125px"
+      minWidth: "125px",
     },
     "& .MuiTabs-indicator": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
     "& .MuiTabs-flexContainer": {
-      borderBottom: "1px solid #132235",
-      width: "100%"
+      borderBottom: "1px solid #000000",
+      width: "100%",
     },
 
     " & .MuiTabPanel-root": {
-      width: "100%"
+      width: "100%",
     },
     "& .MuiBox-root-650": {
-      width: "100%"
+      width: "100%",
     },
     "& .MuiTabPanel-root-dreiQx": {
-      width: "100%"
+      width: "100%",
     },
     "& .MuiBox-root": {
-      backgroundColor: "green"
+      backgroundColor: "green",
     },
     "& .MuiTabPanel-root": {
-      backgroundColor: "red"
-    }
+      backgroundColor: "red",
+    },
   },
   panel: {
     "& .MuiTabPanel-root": {
-      backgroundColor: "red"
-    }
-  }
+      backgroundColor: "red",
+    },
+  },
 });
 const SwapBottomTab = () => {
   const getTokenImageBySymbol = (symbol) => {
@@ -131,7 +131,8 @@ const SwapBottomTab = () => {
         tokenName: "Native Solana",
         tokenSymbol: "SOL",
         tokenAmount: { uiAmountString: solBalance.toString() },
-        balanceInUSD: solBalance * marketData ? marketData.current_price.usd : 0
+        balanceInUSD:
+          solBalance * marketData ? marketData.current_price.usd : 0,
       };
       if (result) {
         const mappedResult = result.map(async (elm) => {
@@ -144,7 +145,7 @@ const SwapBottomTab = () => {
               ...elm,
               balanceInUSD: marketData
                 ? elm.tokenAmount.uiAmount * marketData.current_price.usd
-                : 0
+                : 0,
             };
           }
         });
@@ -196,7 +197,7 @@ const SwapBottomTab = () => {
               style={{
                 padding: "0.7em",
                 maxHeight: "600px",
-                overflowY: "scroll"
+                overflowY: "scroll",
               }}
             >
               {userBalance
@@ -266,7 +267,7 @@ const SwapBottomTab = () => {
               style={{
                 padding: "0.7em",
                 maxHeight: "600px",
-                overflowY: "scroll"
+                overflowY: "scroll",
               }}
             >
               {tradeHistory
