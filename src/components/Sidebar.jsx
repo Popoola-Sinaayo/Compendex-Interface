@@ -52,7 +52,7 @@ const Sidebar = () => {
           <img
             alt=""
             className="sidebar__pic sidebar__pic_dark"
-            src={"/assets/img/compendex2.png"}
+            src={"/assets/img/logo.jpg"}
             style={{ height: 50, width: 50 }}
           />
         </Link>
